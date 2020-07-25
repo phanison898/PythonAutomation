@@ -28,10 +28,6 @@ class Base:
     # web driver initialization
     driver = None
 
-    # path to chrome web driver
-    chrome_driver_path = current_dir + "/Resources/Drivers/chromedriver.exe"
-    firefox_driver_path = current_dir + ""
-
     '''
     This method gets invoke automatically before each and every test case
     browser configurations will be configured in this method
@@ -41,9 +37,11 @@ class Base:
     def browser_initialization(self):
 
         if self.browser_name == "chrome":
-            self.driver = webdriver.Chrome(executable_path=self.chrome_driver_path)
+            chrome_driver_path = self.current_dir + "/Resources/Drivers/chromedriver.exe"
+            self.driver = webdriver.Chrome(executable_path=chrome_driver_path)
         elif self.browser_name == "firefox":
-            self.driver = webdriver.Firefox(executable_path=self.firefox_driver_path)
+            firefox_driver_path = self.current_dir + ""
+            self.driver = webdriver.Firefox(executable_path=firefox_driver_path)
         else:
             print("NO_BROWSER_FOUND_EXCEPTION")
 

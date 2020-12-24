@@ -17,4 +17,4 @@ class GoogleTest(Base):
         search_box.clear()
         search_box.send_keys("naga phani kumar")
         search_box.send_keys(Keys.ENTER)
-        sleep(5)
+        sleep(10)
